@@ -1,0 +1,5 @@
+*.log
+dist
+typings
+node_modules
+.vscode
