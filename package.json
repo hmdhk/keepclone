@@ -1,0 +1,23 @@
+{
+  "name": "keepclone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hamidreza jahtalab",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.46",
+    "firebase": "^2.3.1",
+    "jquery": "^2.1.4",
+    "materialize-css": "^0.97.3",
+    "systemjs": "^0.19.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.9.2",
+    "run-sequence": "^1.1.4"
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "version": "1.6.2",
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noLib": false
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

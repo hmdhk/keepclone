@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/materialize-css/css/materialize.min.css"  media="screen,projection"/>
+
+    <title>Keep Clone</title>
+	  <script src="https://code.angularjs.org/tools/system.js"></script>
+    
+    <script>
+  		System.config({
+  			packages: {
+  				'': {
+  				defaultExtension: 'js'
+  				}
+        		}
+      	});
+  	</script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body dir="ltr" >
+    <keepclone></keepclone>
+
+    <script src='/jquery/jquery.min.js'></script>
+    <script src='/materialize-css/js/materialize.min.js'></script>
+    <script src='/angular2/angular2.js'></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+
+    <script async>
+        System.import('keepclone/keepclone')
+  	</script>
+</body>
+</html>
