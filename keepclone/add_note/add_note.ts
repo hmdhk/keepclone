@@ -18,10 +18,10 @@ export class AddNote {
 
   }
   public keydown(e) {
+    // Ctrl-Enter
     if (e.ctrlKey && e.keyCode == 13) {
-      // Ctrl-Enter pressed
-      this.noteService.push({ text: this.text })
-      console.log('control enter');
+      this.noteService.push({ text: this.text, creationDate: Date.now() })
+      this.text = '';
     }
 
   }
