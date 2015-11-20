@@ -1,6 +1,7 @@
 {
   "firebase": "keepclone",
   "public": "./dist",
+  "rules": "firebase_security_rules.json",
   "ignore": [
     "firebase.json",
     "**/.*",
