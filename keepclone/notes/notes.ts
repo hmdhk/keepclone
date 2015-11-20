@@ -1,5 +1,7 @@
 import {Component, NgFor} from "angular2/angular2";
 import {NoteService} from "../note_service"
+import * as _ from "underscore"
+
 
 @Component({
 	selector: 'notes',
@@ -13,11 +15,14 @@ export class Notes {
 		noteService.on((data: FirebaseDataSnapshot) => {
 			this.notes = [];
 			data.forEach((d) => {
-				this.notes.unshift(d.val());
+
+				var note = _.extend({ ref: d.ref(), key: d.key() }, d.val());
+				this.notes.unshift(note);
 			});
 		});
+	}
+	public doneNote(e, note) {
+		note.ref.remove();
 
 	}
-
-
 }

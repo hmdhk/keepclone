@@ -1,7 +1,13 @@
 <div class="col s12">
-	<div class="row card" *ng-for="#note of notes">
+	<div class="row card hoverable" *ng-for="#note of notes">
 		<div class="card-content">
 			<p style="white-space: pre-wrap"> {{note.text}}</p>
+
+		</div>
+		<div class="card-action right-align">
+			<a (click)="doneNote($event,note)" class="waves-effect waves-dark btn-flat">
+				<i class="fa fa-check"></i>
+			</a>
 		</div>
 	</div>
 </div>
