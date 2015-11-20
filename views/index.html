@@ -3,13 +3,18 @@
 <html>
 
 <head>
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="/materialize-css/css/materialize.min.css" media="screen,projection" />
 
   <title>Keep Clone</title>
-  <script src="https://code.angularjs.org/tools/system.js"></script>
+  <script src="/systemjs/system.js"></script>
 
   <script>
     System.config({
+        map:{
+          underscore:'/underscore/underscore.js'
+        },
   			packages: {
   				'': {
   				defaultExtension: 'js'
