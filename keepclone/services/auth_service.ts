@@ -6,15 +6,20 @@ export class AuthService {
 	private authData = null;
 	private firebaseRef;
 	private url;
+	private _userProfile;
+	public get userProfile() {
+		return this.getUserProfile();
+	}
 	constructor(private configService: ConfigService) {
 		this.url = this.configService.firebaseUrl;
 		this.firebaseRef = new Firebase(this.url);
 	}
 
-	public getUserProfile() {
+	private getUserProfile() {
 		if (this.authData != null) {
 			return {
-				displayName: this.authData.google.displayeName
+				displayName: this.authData.google.displayName,
+				email: this.authData.google.email
 			};
 		}
 	}
@@ -37,10 +42,12 @@ export class AuthService {
 				console.log("Authenticated successfully with payload:", authData);
 				this.authData = authData;
 				var profile = new Firebase(this.url + "/users/" + authData.uid + '/profile');
-                profile.set({
+				this._userProfile = {
                     displayName: authData.google.displayName,
                     email: authData.google.email
-                });
+                };
+
+                profile.set(this._userProfile);
 			}
 		}, {
                 remember: "sessionOnly",

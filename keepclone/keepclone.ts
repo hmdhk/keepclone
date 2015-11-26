@@ -16,9 +16,14 @@ import {NoteService} from "./services/note_service"
 })
 
 export class KeepClone {
+
 	constructor(private authService: AuthService) {
 
 	}
+	public get userProfile() {
+		return this.authService.userProfile;
+	}
+	
 	public isAuthenticated() {
 		return this.authService.isAuthenticated();
 	}
