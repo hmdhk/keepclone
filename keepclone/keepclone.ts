@@ -1,8 +1,12 @@
 import {Component, bootstrap, NgIf} from "angular2/angular2";
+
 import {AddNote} from "./add_note/add_note"
 import {Notes} from "./notes/notes"
-import {NoteService} from "./note_service"
-import {AuthService} from "./auth_service"
+
+import {ConfigService} from './services/config_service'
+import {AuthService} from "./services/auth_service"
+import {NoteService} from "./services/note_service"
+
 
 @Component({
 	selector: 'keepclone',
@@ -15,7 +19,7 @@ export class KeepClone {
 	constructor(private authService: AuthService) {
 
 	}
-	public isAuthenticated(){
+	public isAuthenticated() {
 		return this.authService.isAuthenticated();
 	}
 	public unAuth() {
@@ -26,4 +30,4 @@ export class KeepClone {
 	}
 }
 
-bootstrap(KeepClone, [NoteService, AuthService]);
+bootstrap(KeepClone, [NoteService, AuthService, ConfigService]);

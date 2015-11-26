@@ -1,10 +1,12 @@
 import {Injectable} from 'angular2/angular2';
 import {AuthService} from './auth_service'
+import {ConfigService} from './config_service'
 @Injectable()
 export class NoteService {
 	private url = "https://keepclone.firebaseio.com";
 	private notes: Firebase;
-	constructor(private authService: AuthService) {
+	constructor(private configService: ConfigService, private authService: AuthService) {
+		this.url = this.configService.firebaseUrl;
 		this.notes = new Firebase(this.url + "/notes");
 	}
 	public push(note) {

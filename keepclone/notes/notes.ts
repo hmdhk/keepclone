@@ -1,5 +1,5 @@
 import {Component, NgFor} from "angular2/angular2";
-import {NoteService} from "../note_service"
+import {NoteService} from "../services/note_service"
 import * as _ from "underscore"
 
 

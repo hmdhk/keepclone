@@ -1,8 +1,14 @@
+import {Injectable} from 'angular2/angular2';
+import {ConfigService} from './config_service'
+
+@Injectable()
 export class AuthService {
 	private authData = null;
-	private firebaseRef = new Firebase("https://keepclone.firebaseio.com");
-	constructor() {
-
+	private firebaseRef;
+	private url;
+	constructor(private configService: ConfigService) {
+		this.url = this.configService.firebaseUrl;
+		this.firebaseRef = new Firebase(this.url);
 	}
 
 	public getUserProfile() {
@@ -30,7 +36,15 @@ export class AuthService {
 			} else {
 				console.log("Authenticated successfully with payload:", authData);
 				this.authData = authData;
+				var profile = new Firebase(this.url + "/users/" + authData.uid + '/profile');
+                profile.set({
+                    displayName: authData.google.displayName,
+                    email: authData.google.email
+                });
 			}
-		});
+		}, {
+                remember: "sessionOnly",
+                scope: "email"
+            });
 	}
 }
