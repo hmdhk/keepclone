@@ -1,11 +1,18 @@
 <div class="row card">
+	<div *ng-if="showImage" class="card-image">
+		<img [attr.src]="image" />
+	</div>
 	<div class="col s12 card-content">
 		<div class="input-field col s12">
 			<textarea [(ng-model)]="text" (keydown)="keydown($event)" id="add_note" class="materialize-textarea"></textarea>
 			<label for="add_note">New Note</label>
 		</div>
 	</div>
-	<div class="card-action right-align" >
-		<a (click)="done($event)" class="waves-effect waves-dark btn-flat" >Done</a>
+	<div class="card-action right-align">
+		<a (click)="fileinput.click()" class="waves-effect waves-dark btn-flat">
+			<i class="fa fa-picture-o"></i>
+			<input #fileinput style="display:none;" (change)="previewImage($event)" type="file" accept="image/*" capture="camera">
+		</a>
+		<a (click)="done($event)" class="waves-effect waves-dark btn-flat">Done</a>
 	</div>
 </div>
