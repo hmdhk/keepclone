@@ -28,7 +28,7 @@ gulp.task('copylib', function () {
     gulp.src('./node_modules/font-awesome/fonts/*.*')
         .pipe(gulp.dest('./dist/font-awesome/fonts'));
 
-    gulp.src('./node_modules/systemjs/dist/system.js')
+    gulp.src('./node_modules/systemjs/dist/system.src.js')
         .pipe(gulp.dest('./dist/systemjs'));
     gulp.src('./node_modules/jquery/dist/**/*.*')
         .pipe(gulp.dest('./dist/jquery'));
@@ -36,7 +36,7 @@ gulp.task('copylib', function () {
         .pipe(gulp.dest('./dist/materialize-css'));
 
     gulp.src('./node_modules/underscore/underscore.js')
-        .pipe(gulp.dest('./dist/underscore'));
+        .pipe(gulp.dest('./dist/underscore'));       
 
     return gulp.src('./node_modules/angular2/bundles/angular2.js')
         .pipe(gulp.dest('./dist/angular2'));

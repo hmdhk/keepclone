@@ -8,12 +8,19 @@
   <link type="text/css" rel="stylesheet" href="/materialize-css/css/materialize.min.css" media="screen,projection" />
 
   <title>Keep Clone</title>
-  <script src="/systemjs/system.js"></script>
+  <script src="/systemjs/system.src.js"></script>
 
   <script>
     System.config({
+        meta: {
+          '/opbeat/opbeat.js': {
+            format: 'cjs'
+          }
+        },     
         map:{
-          underscore:'/underscore/underscore.js'
+          underscore:'/underscore/underscore.js',
+          opbeat:'/opbeat/opbeat.js'
+          // opbeat:'https://d3tvtfb6518e3e.cloudfront.net/1/opbeat.js'
         },
   			packages: {
   				'': {
@@ -34,6 +41,7 @@
   <script src='/jquery/jquery.min.js'></script>
   <script src='/materialize-css/js/materialize.min.js'></script>
   <script src='/angular2/angular2.js'></script>
+  <script src="https://d3tvtfb6518e3e.cloudfront.net/1/opbeat.js" data-org-id="7f9fa667d0a349dd8377bc740bcfc33e" data-app-id="c9cca0eb42"></script>
   <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
 
